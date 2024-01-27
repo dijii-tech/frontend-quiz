@@ -1,12 +1,14 @@
 :root {
-    --color-orange: #f58220;
-    --color-white: #fff;
+    --color-background: #0d2328;
+    --color-blue: #19b3f1;
+    --color-blue-foreground: #80cdf6;
+    --color-blue-background: #357597;
 }
 
 body,
 html {
     margin: 0;
-    background-color: #1d1828;
+    background-color: #232323;
     width: 100%;
     height: 100%;
 }
