@@ -14,7 +14,7 @@ function main() {
         }
     }
     for (let i = 0; i < cases.length; i++) {
-        const r = getCombinations(parseInt(cases[i]), cases[i]);
+        const r = getCombinations(cases[i].length, cases[i]);
         const a = new Set(r.map((x) => x.join("")));
         const b = new Set(solutions[i]);
         for (const x of a) {
