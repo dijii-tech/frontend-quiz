@@ -1,9 +1,15 @@
--   [DIJI.TECH Frontend Quiz](#dijitech-frontend-quiz)
-    -   [CSS (CASE-1)](#css-case-1)
-    -   [JS (CASE-2)](#js-case-2)
-        -   [Örnek 1:](#örnek-1)
-        -   [Örnek 2:](#örnek-2)
-        -   [Çözüm İçin Notlar](#çözüm-i̇çin-notlar)
+- [DIJI.TECH Frontend Quiz](#dijitech-frontend-quiz)
+  - [CSS (CASE-1)](#css-case-1)
+  - [JS (CASE-2)](#js-case-2)
+    - [Örnek 1:](#örnek-1)
+    - [Örnek 2:](#örnek-2)
+    - [Çözüm İçin Notlar](#çözüm-i̇çin-notlar)
+  - [JS 2 (CASE-3)](#js-2-case-3)
+    - [Örnek](#örnek)
+    - [Örnek 2](#örnek-2-1)
+    - [Çözüm İçin Notlar](#çözüm-i̇çin-notlar-1)
+  - [JS 2 (CASE-3)](#js-2-case-3-1)
+    - [Örnek](#örnek-1)
 
 # DIJI.TECH Frontend Quiz
 
@@ -106,3 +112,97 @@ Case 20 [0 == 7]: FAIL
 Case 21 [0 == 14]: FAIL
 Case 22 [0 == 1]: FAIL
 ```
+
+## JS 2 (CASE-3)
+
+Farklı grupların 1'er elemanını seçerek seçim kombinasyonları oluşturan fonksiyonu yazınız.
+
+### Örnek
+
+| 1. Grup | 2.Grup |
+| ------- | ------ |
+| Eylül   | A      |
+| Ekim    | B      |
+
+`Eylül` -> `A`,`B` seçimlerini alabilir
+
+`Ekim` -> `A`,`B` seçimlerini alabilir
+
+Seçimler;
+
+Aşağıdaki gibi 4 farklı seçim olabilir
+
+```
+- Eylül - A
+- Eylül - B
+- Ekim - A
+- Ekim - B
+```
+
+### Örnek 2
+
+| 1. Grup | 2.Grup | 3.Grup |
+| ------- | ------ | ------ |
+| Eylül   | A      | 1      |
+|         | B      | 2      |
+
+`Eylül` -> `A,1`,`A,2`,`B,1`,`B,2` seçimlerini alabilir
+
+Seçimler;
+
+Aşağıdaki gibi 4 farklı seçim olabilir
+
+```
+- Eylül - A - 1
+- Eylül - A - 2
+- Eylül - B - 1
+- Eylül - B - 2
+```
+
+### Çözüm İçin Notlar
+
+-   `case_3.js` dosyası içinde bulunan `getCombinations` fonksiyonunda çalışmalarınızı yapınız.
+-   `2 < n < 7` değeri grup sayısıdır.
+-   `c` değeri grupların içerikleridir.
+-
+
+```js
+function getCombinations(n, c) {
+    // n = 2
+    // c = [[a,j,p],[y,n]]
+    ...
+    ...
+    return answer // [[a,y],[a,n],[j,y],[j,n],[p,y],[p,n]]
+}
+```
+
+-   Terminale `node case_3.js` yazarak kodunuzu test edebilirsiniz.
+
+## JS 2 (CASE-3)
+
+Verilen path değerine göre attibute getiren fonksiyonun yazılması
+
+### Örnek
+
+```js
+const obj = {
+    c: {
+        d: 1,
+        e: [
+            3,
+            5,
+            6,
+            {
+                f: 4,
+            },
+        ],
+    },
+};
+```
+
+- `'b.c.d'` değeri için cevap `1`
+- `'b.c.e.1'` değeri için cevap `5`
+- `'b.c.e.3.f'` değeri için cevap `4`
+- `'b.c.e.-1.f'` değeri için cevap `4`
+
+-   Terminale `node case_4.js` yazarak kodunuzu test edebilirsiniz.
