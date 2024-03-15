@@ -29,22 +29,24 @@ const cases = [
             a: (() => {
                 const o = objFactory();
                 const n = objFactory();
-                n.c.e.push({
-                    x: [{ f: 0 }, { E: 1 }, { g: 2 }],
+                o.c.e.push({
+                    x: [{ f: 0 }, { E: 1 }, { g: 2, "-1": 23 }],
                 });
                 o.c.e[3].k = n;
                 return o;
             })(),
         },
         [
-            ["a.b.c.d", null],
+            ["a.b.c.d", undefined],
             ["a.c.e.-1.x.0.f", 0],
-            ["a.c.e.-1.x.1.e", null],
-            ["a.c.e.k.c.e.-1.f", 4],
-            ["a.c.e.k.c.e.-1.g", null],
+            ["a.c.e.-1.x.1.e", undefined],
+            ["a.c.e.3.k.c.e.-1.f", 4],
+            ["a.c.e.3.k.c.e.-1.g", undefined],
+            ["a.c.e.-1.x.-1.-1", 23],
         ],
     ],
 ];
+
 function getAttribute(o, k) {
     return null;
 }
@@ -54,7 +56,7 @@ function main() {
         const obj = situation[0];
         for (const [k, v] of situation[1]) {
             const r = getAttribute(obj, k);
-            console.log(`Case ${k} : ${r === v ? "OK" : "FAIL"}`);
+            console.log(`Case ${k} : ${r === v ? "OK" : `FAIL (${r})`}`);
         }
     }
 }
